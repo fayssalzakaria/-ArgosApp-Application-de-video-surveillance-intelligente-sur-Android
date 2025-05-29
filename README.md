@@ -48,25 +48,25 @@ Le backend est déjà déployé sur Render (aucune action nécessaire).
 3. Lancer sur un émulateur ou une tablette Android
 
 ## 📸 Captures d’écran
-## 📸 Captures d’écran
 
 ### 🔐 Écran de connexion
-![Connexion](./Connection.PNG)
+![Connexion](./im%20projet/Connection.PNG)
 
 ### 👥 Gestion des utilisateurs
-![Utilisateurs](./Gestion_utilisateurs.PNG)
+![Utilisateurs](./im%20projet/Gestion_utilisateurs.PNG)
 
 ### 🎞️ Historique des alertes
-![Historique](./Historique_Alerte.PNG)
+![Historique](./im%20projet/Historique_Alerte.PNG)
 
 ### 📺 Visionnage en direct
-![Surveillance](./Video_Surv.PNG)
+![Surveillance](./im%20projet/Video_Surv.PNG)
 
 ### 📷 Gestion des caméras
-![Gestion caméras](./Gest_cam.PNG)
+![Gestion caméras](./im%20projet/Gest_cam.PNG)
 
 ### 👤 Espace compte utilisateur
-![Compte utilisateur](./Gestion_compte.PNG)
+![Compte utilisateur](./im%20projet/Gestion_compte.PNG)
+
 
 
 

@@ -49,7 +49,7 @@ Le backend est déjà déployé sur Render (aucune action nécessaire).
 
 ## 📸 Captures d’écran
 
-*(Ajoutez ici des screenshots ou GIFs de l’application)*
+
 
 ## 👨‍💻 Équipe projet
 

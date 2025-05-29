@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#F0F5FE">
+
+    <!-- Barre de titre -->
+    <LinearLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="#293ca4"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Icône espace compte -->
+        <ImageView
+            android:id="@+id/ivUser"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_user"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onUserClick"/>
+
+        <!-- Texte de titre-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gestion des enseignes"
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_weight="16"
+            android:layout_marginStart="4dp"/>
+
+        <!-- Icône espace Home -->
+        <ImageView
+            android:id="@+id/ivHome"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_home"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onHomeClick"/>
+    </LinearLayout>
+
+    <!-- Bloc dynamique regroupant "Liste des clients", "SearchView", "Ajouter une enseigne", et "Share" -->
+
+    <LinearLayout
+        android:id="@+id/blockTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleBar"
+>
+        <!-- Texte "Liste des clients" -->
+        <TextView
+            android:id="@+id/listeClientsText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Liste des enseignes"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:textColor="@android:color/black"/>
+
+        <!--rechercher un client-->
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="🔍 Recherche"
+            android:background="@drawable/rounded_edittext_search"
+            android:padding="8dp"
+            android:textColor="@android:color/black" />
+
+        <!-- Bouton "Ajouter une enseigne" -->
+        <ImageButton
+            android:id="@+id/ajout_client"
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_add"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            />  <!-- Prendre 15% de la largeur -->
+
+        <!-- Bouton "Share" -->
+        <ImageButton
+            android:id="@+id/share"
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_export"
+            android:background="@null"
+            android:scaleType="fitCenter" /> <!-- Prendre 15% de la largeur -->
+    </LinearLayout>
+
+
+    <!-- ScrollView contenant le tableau des clients -->
+    <android.widget.ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/blockTop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Tableau des clients -->
+        <TableLayout
+            android:id="@+id/tableClients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*"
+            >
+
+            <!-- Ligne 1 -->
+            <TableRow>
+                <!--Colonne "Id" -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:padding="4dp"
+                    android:text="ID de l'utilisateur y travaillant"
+                    android:textStyle="bold" />
+                <!--Colonne "Enseignes" -->
+               <TextView
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:gravity="center"
+                   android:padding="4dp"
+                   android:text="Enseigne"
+
+                   android:textStyle="bold" />
+                <!--Colonne"Adresse" -->
+               <TextView
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="2"
+                   android:gravity="center"
+                   android:padding="4dp"
+                   android:text="Adresse"
+                   android:textStyle="bold" />
+                <!--Colonne de gestion des cameras -->
+               <TextView
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:gravity="center"
+                   android:padding="4dp"
+                   android:text="Gérer les caméras"
+                   android:textStyle="bold" />
+                <!--Colonne "Supprimmer" -->
+               <TextView
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:gravity="center"
+                   android:padding="4dp"
+                   android:text="Supprimer"
+
+                   android:textStyle="bold" />
+           </TableRow>
+
+       </TableLayout>
+   </android.widget.ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

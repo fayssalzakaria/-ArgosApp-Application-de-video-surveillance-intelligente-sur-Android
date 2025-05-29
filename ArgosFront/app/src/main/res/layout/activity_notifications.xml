@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- RecyclerView des notifications -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Barre de titre -->
+        <LinearLayout
+            android:id="@+id/titleBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:background="#293ca4"
+            android:gravity="center_vertical">
+
+            <!-- Icône parametre -->
+            <ImageView
+                android:id="@+id/iconParametre"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_menu"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <!-- Titre -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="16"
+                android:text="Notification"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:layout_marginStart="10dp"/>
+
+            <!-- Icône notifications avec badge -->
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/notification_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_notifications"
+                    android:clickable="true"
+                    android:focusable="true"/>
+
+                <TextView
+                    android:id="@+id/notification_badge"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/badge_background"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:layout_gravity="end"
+                    android:visibility="gone"/>
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewNotifications"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <!-- Conteneur du fragment des paramètres -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="10dp" /> <!-- Visible seulement quand besoin -->
+
+</FrameLayout>

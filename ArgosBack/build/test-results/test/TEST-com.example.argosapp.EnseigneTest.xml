@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.argosapp.EnseigneTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-04-30T18:21:15" hostname="DESKTOP-NERU9KO" time="0.007">
+  <properties/>
+  <testcase name="testToString()" classname="com.example.argosapp.EnseigneTest" time="0.003"/>
+  <testcase name="testConstructeur()" classname="com.example.argosapp.EnseigneTest" time="0.0"/>
+  <testcase name="testEqualsEtHashCode()" classname="com.example.argosapp.EnseigneTest" time="0.003"/>
+  <testcase name="testGettersEtSetters()" classname="com.example.argosapp.EnseigneTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

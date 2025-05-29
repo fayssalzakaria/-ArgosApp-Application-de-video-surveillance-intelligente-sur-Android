@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.argosapp.UtilisateurServiceTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2025-04-30T18:21:27" hostname="DESKTOP-NERU9KO" time="1.442">
+  <properties/>
+  <testcase name="testModifierMotDePasseAdmin_Failure_UserNotFound()" classname="com.example.argosapp.UtilisateurServiceTest" time="0.039"/>
+  <testcase name="testModifierMotDePasseAdmin_Success()" classname="com.example.argosapp.UtilisateurServiceTest" time="0.394"/>
+  <testcase name="testSupprimerUtilisateur_Success()" classname="com.example.argosapp.UtilisateurServiceTest" time="0.003"/>
+  <testcase name="testSupprimerUtilisateur_Failure()" classname="com.example.argosapp.UtilisateurServiceTest" time="0.004"/>
+  <testcase name="testGetInfosUtilisateur_UserNotFound()" classname="com.example.argosapp.UtilisateurServiceTest" time="0.004"/>
+  <testcase name="testAuthentifier_Success()" classname="com.example.argosapp.UtilisateurServiceTest" time="0.401"/>
+  <testcase name="testModifierMotDePasseAdmin_Failure_NoAdmin()" classname="com.example.argosapp.UtilisateurServiceTest" time="0.002"/>
+  <testcase name="testAuthentifier_Failure()" classname="com.example.argosapp.UtilisateurServiceTest" time="0.001"/>
+  <testcase name="testGetAllUtilisateurs()" classname="com.example.argosapp.UtilisateurServiceTest" time="0.003"/>
+  <testcase name="testEnregistrerUtilisateur()" classname="com.example.argosapp.UtilisateurServiceTest" time="0.387"/>
+  <testcase name="testGetInfosUtilisateur_Success()" classname="com.example.argosapp.UtilisateurServiceTest" time="0.196"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

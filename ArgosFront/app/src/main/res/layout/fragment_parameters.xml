@@ -1,0 +1,277 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Menu des paramètres, initialement masqué -->
+    <!-- La largeur est définie pour éviter qu'il ne prenne trop de place à l'écran,
+         car avec un LinearLayout, il pourrait s'étirer excessivement -->
+    <!-- La largeur peut aussi être ajustée en fonction de la taille de l'écran
+         via des fichiers dimens -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/menuSettings"
+        android:layout_width="265dp"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:padding="10dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Ce layout a une hauteur "wrap_content" pour s'adapter aux enfants
+             et une largeur fixe de 265dp -->
+        <!-- Vous pouvez ajuster les tailles des éléments et du layout parent selon les écrans
+             en utilisant des fichiers dimens -->
+        <!-- Layout vertical pour organiser les éléments à l'intérieur -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Layout horizontal pour afficher l'icône et le texte -->
+            <LinearLayout
+                android:id="@+id/parametersContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <!-- Icône retour -->
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1.5"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_arrow" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/parametersTextView"
+                    android:layout_width="0dp"
+                    android:layout_weight="13"
+                    android:layout_height="wrap_content"
+                    android:text="Paramètres et activités"
+                    android:textSize="17dp"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <!-- Layout horizontal pour afficher l'icône et le texte "Espace compte" -->
+            <LinearLayout
+                android:id="@+id/accountSpaceContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="3dp"
+                android:padding="5dp"
+                android:background="#f0f5fe"
+                app:layout_constraintTop_toBottomOf="@id/parametersContainer"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <!-- Icône espace compte -->
+                <ImageView
+                    android:id="@+id/accountSpaceImageView"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_account_space" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="15"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/parametersContainer"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Espace Comptes"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/text_size_title"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Informations personnelles"
+                        android:textColor="#757575"
+                        android:textSize="@dimen/text_size_title"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Layout vertical pour contenir les 3 activités -->
+            <LinearLayout
+                android:id="@+id/activitiesContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="3dp"
+                android:padding="5dp"
+                android:background="#f0f5fe"
+                app:layout_constraintTop_toBottomOf="@id/accountSpaceContainer"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <!-- Layout horizontal pour afficher l'icône et le texte "Historique" -->
+                <LinearLayout
+                    android:id="@+id/historicalContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/accountSpaceContainer">
+
+                    <!-- Icône historique -->
+                    <ImageView
+                        android:id="@+id/historicalImageView"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_historical" />
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_weight="0.1"
+                        android:layout_height="match_parent"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="5"
+                        android:layout_height="wrap_content"
+                        android:text="Historique"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/text_size_title"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_vertical"
+                        app:layout_constraintTop_toBottomOf="@id/accountSpaceContainer"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </LinearLayout>
+
+                <!-- Layout horizontal pour afficher l'icône et le texte "Gestion des caméras" -->
+                <LinearLayout
+                    android:id="@+id/camerasManagementContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/historicalContainer">
+
+                    <!-- Icône gestion caméra -->
+                    <ImageView
+                        android:id="@+id/camerasManagementImageView"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_camera_management" />
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_weight="0.1"
+                        android:layout_height="match_parent"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="5"
+                        android:layout_height="wrap_content"
+                        android:text="Caméras"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/text_size_title"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_vertical"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/viewingContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="5dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/camerasManagementContainer">
+
+                    <!-- Icône visionnage -->
+                    <ImageView
+                        android:id="@+id/viewingImageView"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/surveillance" />
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_weight="0.3"
+                        android:layout_height="match_parent"/>
+
+                    <TextView
+                        android:id="@+id/viewingTextView"
+                        android:layout_width="0dp"
+                        android:layout_weight="5"
+                        android:layout_height="wrap_content"
+                        android:text="Visionnage"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/text_size_title"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_vertical"/>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- Layout horizontal pour afficher "Se déconnecter" -->
+            <LinearLayout
+                android:id="@+id/deconnectionContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="3dp"
+                android:padding="10dp"
+                android:background="#f0f5fe"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <!-- Texte pour la déconnexion, nécessite un gestionnaire de clic -->
+                <TextView
+                    android:id="@+id/deconnectionTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Se déconnecter"
+                    android:textColor="#FF0000"
+                    android:textSize="@dimen/text_size_title"
+                    android:textStyle="bold"
+               />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

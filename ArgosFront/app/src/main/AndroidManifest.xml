@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permission pour lire le stockage externe (nécessaire pour Android < 10) -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
+    <!-- Pour les appareils Android < 10, permission d'écriture -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28"/>
+
+    <application
+        android:usesCleartextTraffic="true"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ArgosApp"
+        tools:targetApi="31">
+        <!-- Activités de l'application -->
+        <activity android:name=".AccountsActivity" android:exported="false"/>
+        <activity android:name=".AddCamActivity" android:exported="false"/>
+        <activity android:name=".AddUserActivity" android:exported="false"/>
+        <activity android:name=".AjoutEnseigneActivity" android:exported="false"/>
+        <activity android:name=".EspaceCompteActivity" android:exported="false"/>
+        <activity android:name=".GestionCamActivity" android:exported="false"/>
+        <activity android:name=".GestionEnseignesActivity" android:exported="false"/>
+        <activity android:name=".HistoriqueActivity" android:exported="false"/>
+        <activity android:name=".HomeActivity" android:exported="false"/>
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".NotificationsActivity" android:exported="false"/>
+        <activity android:name=".ParametersActivity" android:exported="false"/>
+        <activity android:name=".ParametersMenuFragmentActivity" android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".UserManagementActivity" android:exported="false"/>
+        <activity android:name=".VideoSurveillanceActivity" android:exported="false"/>
+        <activity android:name=".GestionCamUserActivity" android:exported="false"/>
+        <activity android:name=".VideoPlayerActivity" android:exported="false"/>
+
+    </application>
+
+
+
+
+
+
+</manifest>

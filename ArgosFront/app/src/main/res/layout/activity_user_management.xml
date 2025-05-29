@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true"
+    tools:context=".UserManagementActivity">
+
+    <!-- Barre de titre -->
+    <LinearLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="#293ca4"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Icône utilisateur + texte -->
+        <ImageView
+            android:id="@+id/ivUser"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_user"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onUserClick"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gestion des utilisateurs"
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_weight="16"
+            android:layout_marginStart="4dp"/>
+
+        <!-- Icône Home alignée à droite -->
+        <ImageView
+            android:id="@+id/ivHome"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_home"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onHomeClick"/>
+    </LinearLayout>
+
+    <!-- Barre de recherche -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        >
+
+        <TextView
+            android:id="@+id/ListUser"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Listes des utilisateurs"
+            android:textSize="@dimen/text_size_title"
+            android:padding="8dp"
+            android:textColor="@android:color/black" />
+        <EditText
+            android:id="@+id/searchUser"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="🔍 Recherche"
+            android:background="@drawable/rounded_edittext_search"
+            android:padding="8dp"
+            android:textColor="@android:color/black" />
+
+        <ImageButton
+            android:id="@+id/addUserButton"
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_add"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:tooltipText="Ajouter un utilisateur"
+            android:contentDescription="Ajouter utilisateur"
+            android:onClick="onPlusClick"/>
+
+        <ImageButton
+            android:id="@+id/exportUserButton"
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_export"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:tooltipText="Exporter la liste des utilisateurs"
+            android:contentDescription="Exporter utilisateur"
+            android:onClick="onExportClick"
+
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        >
+        <TextView
+            android:id="@+id/textViewId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="ID"
+            android:textStyle="bold"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/textViewNom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Nom"
+            android:textStyle="bold"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/textViewPrenom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Prénom"
+            android:textStyle="bold"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/textViewMotDePasse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="Mot de passe"
+            android:textStyle="bold"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/textViewOrganisme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="Organisme"
+            android:textStyle="bold"
+            android:padding="4dp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

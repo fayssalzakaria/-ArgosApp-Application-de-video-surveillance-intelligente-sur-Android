@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#F0F5FE">
+
+    <!-- Barre de titre -->
+    <LinearLayout
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="#293ca4"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Icône utilisateur + texte -->
+        <ImageView
+            android:id="@+id/ivUser"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_user"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onUserClick"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ajout d'un utilisateur"
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_weight="16"
+            android:layout_marginStart="4dp"/>
+
+        <!-- Icône Home alignée à droite -->
+        <ImageView
+            android:id="@+id/ivHome"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_home"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onHomeClick"/>
+    </LinearLayout>
+
+    <!-- Bouton "Ajouter enseigne"  -->
+    <TextView
+        android:id="@+id/texteInstruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Veuillez renseigner les champs suivants:"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+    <!-- espace de saisis pour l'id  -->
+    <ImageView
+        android:id="@+id/saisisId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/rectangesaisis"
+        tools:layout_editor_absoluteX="378dp"
+        tools:layout_editor_absoluteY="149dp"
+        app:layout_constraintTop_toBottomOf="@id/texteInstruction"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="18dp"/>
+    <!-- espace de saisis pour l'enseigne  -->
+    <ImageView
+        android:id="@+id/saisisEnseigne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/rectangesaisis"
+        tools:layout_editor_absoluteX="378dp"
+        tools:layout_editor_absoluteY="242dp"
+        app:layout_constraintTop_toBottomOf="@id/saisisId"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="18dp"/>
+    <!-- espace de saisis pour l'adresse  -->
+    <ImageView
+        android:id="@+id/saisisAdresse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/rectangesaisis"
+        tools:layout_editor_absoluteX="378dp"
+        tools:layout_editor_absoluteY="242dp"
+        app:layout_constraintTop_toBottomOf="@id/saisisEnseigne"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="18dp"/>
+    <!-- Edit Texte pour saisir l'adresse-->
+
+    <EditText
+        android:id="@+id/editTextAdresse"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:importantForAutofill="no"
+        android:inputType="textNoSuggestions"
+        android:text="Adresse"
+        android:textColor="#808080"
+        android:textColorHint="#A0A0A0"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@id/saisisAdresse"
+        app:layout_constraintTop_toTopOf="@id/saisisAdresse"
+        app:layout_constraintStart_toStartOf="@id/saisisAdresse"
+        app:layout_constraintEnd_toEndOf="@id/saisisAdresse"/>
+    <!-- Edit Texte pour saisir l'Id-->
+
+    <EditText
+        android:id="@+id/editTextIdentifiant"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:importantForAutofill="no"
+        android:inputType="textNoSuggestions"
+        android:text="Identifiant de l'utilisateur qui y travaille"
+        android:textColor="#808080"
+        android:textColorHint="#A0A0A0"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@id/saisisId"
+        app:layout_constraintTop_toTopOf="@id/saisisId"
+        app:layout_constraintStart_toStartOf="@id/saisisId"
+        app:layout_constraintEnd_toEndOf="@id/saisisId"/>
+
+    <!-- Edit Texte pour saisir l'Enseigne-->
+    <EditText
+        android:id="@+id/editTextEnseigne"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:importantForAutofill="no"
+        android:inputType="textNoSuggestions"
+        android:text="Enseigne"
+        android:textColor="#808080"
+        android:textColorHint="#A0A0A0"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@id/saisisEnseigne"
+        app:layout_constraintTop_toTopOf="@id/saisisEnseigne"
+        app:layout_constraintStart_toStartOf="@id/saisisEnseigne"
+        app:layout_constraintEnd_toEndOf="@id/saisisEnseigne"/>
+
+    <!-- Bouton d'ajout du Client-->
+    <ImageButton
+        android:id="@+id/ajoutButton"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:background="@drawable/ajoutboutton"
+        app:layout_constraintTop_toBottomOf="@id/saisisAdresse"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Texte "Ajouter" centré dans le bouton -->
+    <TextView
+        android:id="@+id/textAjouter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ajouter"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/ajoutButton"
+        app:layout_constraintBottom_toBottomOf="@id/ajoutButton"
+        app:layout_constraintStart_toStartOf="@id/ajoutButton"
+        app:layout_constraintEnd_toEndOf="@id/ajoutButton"
+        android:gravity="center"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

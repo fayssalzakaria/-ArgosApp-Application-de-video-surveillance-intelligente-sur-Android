@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAF0FA"
+    android:fitsSystemWindows="true">
+
+    <!-- Barre de titre -->
+    <LinearLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="#293ca4"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Icône utilisateur -->
+        <ImageView
+            android:id="@+id/iconeParametre"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_menu"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- Titre -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="16"
+            android:text="Espace Comptes"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginStart="10dp"/>
+
+        <!-- Icône notifications avec badge -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/notification_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_notifications"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="openNotifications"/>
+
+            <TextView
+                android:id="@+id/notification_badge"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/badge_background"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="16dp"
+            android:background="@android:color/white"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="5dp"
+            app:cardBackgroundColor="@android:color/white"
+            android:layout_marginHorizontal="20dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Informations personnelles"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="center"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:text="Identifiant"
+                        android:textStyle="bold"/>
+                    <EditText
+                        android:id="@+id/identifiant"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:focusable="false"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:background="@drawable/arrondir_text2"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mot de passe"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:orientation="horizontal"
+                        android:background="@drawable/arrondir_text2"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="10dp">
+
+                        <EditText
+                            android:id="@+id/password"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:textColor="@android:color/black"
+                            android:inputType="textPassword"
+                            android:focusable="false"
+                            android:textStyle="bold"
+                            android:background="@android:color/transparent"
+                            android:padding="10dp"/>
+
+                        <ImageView
+                            android:id="@+id/toggle_password"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/oeil"
+                            android:contentDescription="Afficher/Masquer le mot de passe"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_height="wrap_content"
+                        android:text="Nom"
+                        android:textStyle="bold"/>
+                    <EditText
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:textStyle="bold"
+                        android:focusable="false"
+                        android:textColor="@android:color/black"
+                        android:background="@drawable/arrondir_text2"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Prénom"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"/>
+                    <EditText
+                        android:id="@+id/prenom"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:textColor="@android:color/black"
+
+                        android:textStyle="bold"
+                        android:focusable="false"
+                        android:background="@drawable/arrondir_text2"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Organisme"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"/>
+                    <EditText
+                        android:id="@+id/orgs"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:focusable="false"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:background="@drawable/arrondir_text2"
+                        android:padding="10dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/card_view"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/argossystpng"
+            android:contentDescription="Logo"/>
+
+    </RelativeLayout>
+
+
+    <!-- Conteneur pour le fragment des paramètres -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

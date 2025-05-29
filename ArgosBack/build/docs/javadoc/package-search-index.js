@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.example.argosapp.configuration"},{"l":"com.example.argosapp.enregistrement"},{"l":"com.example.argosapp.enseigne"},{"l":"com.example.argosapp.jwt"},{"l":"com.example.argosapp.main"},{"l":"com.example.argosapp.notification"},{"l":"com.example.argosapp.utilisateur"}];updateSearchResults();

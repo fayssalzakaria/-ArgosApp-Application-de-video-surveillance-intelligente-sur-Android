@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f0f5fe"
+        tools:context=".AddUserActivity"
+        android:fitsSystemWindows="true">
+
+        <!-- Barre de titre -->
+        <LinearLayout
+            android:id="@+id/titleBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:background="#293ca4"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Icône utilisateur + texte -->
+            <ImageView
+                android:id="@+id/ivUser"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_user"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="onUserClick"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ajout d'un utilisateur"
+                android:textSize="@dimen/text_size_title"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:layout_weight="16"
+                android:layout_marginStart="4dp"/>
+
+            <!-- Icône Home alignée à droite -->
+            <ImageView
+                android:id="@+id/ivHome"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_home"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="onHomeClick"/>
+        </LinearLayout>
+
+        <!-- Instruction -->
+        <TextView
+            android:id="@+id/instructionText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Veuillez renseigner les champs suivants :"
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/titleBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Champ Identifiant -->
+        <EditText
+            android:id="@+id/etIdentifiant"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Identifiant"
+            android:background="@drawable/rounded_edittext"
+            android:padding="10dp"
+            android:textColorHint="@color/black"
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/instructionText"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Champ Nom -->
+        <EditText
+            android:id="@+id/etNom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Nom"
+            android:background="@drawable/rounded_edittext"
+            android:padding="10dp"
+            android:textColorHint="@color/black"
+
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etIdentifiant"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Champ Prénom -->
+        <EditText
+            android:id="@+id/etPrenom"
+            android:layout_width="0dp"
+            android:textColorHint="@color/black"
+            android:layout_height="wrap_content"
+            android:hint="Prénom"
+            android:background="@drawable/rounded_edittext"
+            android:padding="10dp"
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etNom"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Mot de passe avec icône -->
+        <LinearLayout
+            android:id="@+id/llPasswordContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:textColorHint="@color/black"
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etPrenom"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edittext">
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="0dp"
+                android:layout_weight="8"
+                android:layout_height="wrap_content"
+                android:hint="Mot de passe"
+                android:textColorHint="@color/black"
+                android:inputType="textPassword"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:background="@null"/>
+
+            <!-- Icône pour voir le mot de passe -->
+            <ImageView
+                android:id="@+id/ivTogglePassword"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_psw_eye_closed"
+                android:paddingTop="10dp"/>
+        </LinearLayout>
+
+        <!-- Champ Organisme -->
+        <EditText
+            android:id="@+id/etOrganisme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Organisme"
+            android:textColorHint="@color/black"
+            android:background="@drawable/rounded_edittext"
+            android:padding="10dp"
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llPasswordContainer"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Bouton Ajouter -->
+        <Button
+            android:id="@+id/btnAjouter"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.2"
+            android:layout_height="wrap_content"
+            android:text="Ajouter"
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="bold"
+            android:backgroundTint="#283593"
+            android:textColor="#FFFFFF"
+            android:padding="8dp"
+            android:onClick="onAjouterClick"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etOrganisme"
+            android:layout_marginTop="16dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

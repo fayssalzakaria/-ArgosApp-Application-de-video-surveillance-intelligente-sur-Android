@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ArgosApp</string>
+    <string name="todo">TODO</string>
+    <string name="enregistrement_2025_01_13_15_12_43">Enregistrement 2025-01-13 15:12:43</string>
+    <string name="alerte_suspicion_de_vol">Alerte suspicion de vol</string>
+    <string name="historique">Historique</string>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="blockTop" type="id"/>
+    <item name="share" type="id"/>
+    <item name="scrollView2" type="id"/>
+    <item name="search" type="id"/>
+    <item name="ajout_client" type="id"/>
+</resources>

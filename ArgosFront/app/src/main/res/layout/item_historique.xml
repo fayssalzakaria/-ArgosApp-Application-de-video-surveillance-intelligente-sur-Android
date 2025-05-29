@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Conteneur principal qui gère la disposition des éléments -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@drawable/rectangle_historique"
+        android:layout_marginBottom="40dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp">
+
+        <!-- Affichage du nom de l'enregistrement -->
+        <TextView
+            android:id="@+id/textNomEnregistrement"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/playButton" />
+
+        <!-- Bouton pour lancer la lecture -->
+        <ImageButton
+            android:id="@+id/playButton"
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
+            android:layout_marginEnd="40dp"
+            android:background="?attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/archivageButton"
+            app:layout_constraintStart_toEndOf="@id/textNomEnregistrement"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/play" />
+
+        <!-- Bouton pour archiver l'enregistrement -->
+        <ImageButton
+            android:id="@+id/archivageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_marginEnd="170dp"
+            android:background="?attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/textProblem"
+            app:layout_constraintStart_toEndOf="@id/playButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/archivage" />
+
+        <!-- Affichage du problème détecté -->
+        <TextView
+            android:id="@+id/textProblem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:textColor="#FFFF00"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/archivageButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</android.widget.ScrollView>

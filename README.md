@@ -28,11 +28,8 @@ ArgosApp est une application Android connectée à un backend Spring Boot, desti
 
 ## 📦 Architecture
 
-```
-Android (Client) <--> API REST (Spring Boot) <--> PostgreSQL
-         ↑                        ↓
-   WebRTC / WebSocket       MediaMTX / FFmpeg
-```
+![Architecture](Image_archit.PNG)
+
 
 ## ⚙️ Lancement
 
